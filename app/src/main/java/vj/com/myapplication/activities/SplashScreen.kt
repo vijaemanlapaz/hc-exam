@@ -11,7 +11,6 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import vj.com.myapplication.BuildConfig
 import vj.com.myapplication.R
 import vj.com.myapplication.Util
 import vj.com.myapplication.databases.RealmController
@@ -33,7 +32,7 @@ class SplashScreen : AppCompatActivity(), ResourceJsonParserCallback {
 
         ButterKnife.bind(this)
 
-        variant.text = BuildConfig.BUILD_TYPE
+        variant.text = getString(R.string.app_name)
 
         ResourceJsonParser(this, this).execute(R.raw.city)
     }
